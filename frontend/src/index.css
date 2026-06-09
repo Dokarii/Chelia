@@ -1,0 +1,111 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", sans-serif;
+  --font-pixel: "VT323", monospace;
+  
+  --color-brand-900: #0f0c29;
+  --color-brand-800: #302b63;
+  --color-brand-700: #24243e;
+}
+
+/* Celeste Inspired Pixel-Art Background */
+.premium-bg {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  /* Exact palette from the Celeste summit image: Deep Blue -> Lavender -> Pink */
+  background: linear-gradient(180deg, #2b335f 0%, #4b4d81 25%, #8b73a8 50%, #d386bd 75%, #ffa1c5 100%);
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.snow-1, .snow-2, .snow-3 {
+  position: absolute;
+  inset: 0;
+  image-rendering: pixelated;
+}
+
+.snow-1 {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='100'%3E%3Crect x='10' y='10' width='4' height='2' fill='%23FFFFFF'/%3E%3Crect x='50' y='40' width='6' height='3' fill='%23FFFFFF'/%3E%3Crect x='80' y='80' width='3' height='2' fill='%23FFFFFF'/%3E%3C/svg%3E");
+  background-size: 200px 200px;
+  animation: fall-1 15s linear infinite;
+  opacity: 0.9;
+}
+.snow-2 {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='80' height='80'%3E%3Crect x='20' y='60' width='4' height='2' fill='%23FFFFFF'/%3E%3Crect x='60' y='20' width='5' height='2' fill='%23FFFFFF'/%3E%3C/svg%3E");
+  background-size: 150px 150px;
+  animation: fall-2 20s linear infinite;
+  opacity: 0.7;
+}
+.snow-3 {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='60' height='60'%3E%3Crect x='10' y='30' width='3' height='1' fill='%23FFFFFF'/%3E%3Crect x='40' y='50' width='4' height='2' fill='%23FFFFFF'/%3E%3C/svg%3E");
+  background-size: 80px 80px;
+  animation: fall-3 25s linear infinite;
+  opacity: 0.5;
+}
+
+/* Perfect tileable pixel-art stepped mountain */
+.celeste-mountain {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 35vh;
+  /* True pixel steps via orthogonal paths! Colors matched to summit blocks */
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 100' preserveAspectRatio='xMidYMax slice'%3E%3Cpath fill='%23794a7a' d='M0,100 v-40 h10 v-10 h20 v-20 h10 v10 h10 v10 h30 v-10 h10 v-30 h10 v10 h10 v10 h20 v30 h10 v10 h20 v-10 h10 v-10 h20 v20 h10 v30 Z'/%3E%3Cpath fill='%2343214C' d='M0,100 v-20 h20 v-10 h10 v-20 h20 v20 h10 v10 h30 v-40 h20 v20 h10 v10 h20 v-10 h20 v30 h10 v10 h10 v-10 h20 v10 Z' opacity='0.9'/%3E%3C/svg%3E");
+  background-size: auto 35vh;
+  background-position: bottom;
+  background-repeat: repeat-x;
+  image-rendering: pixelated;
+}
+
+@keyframes fall-1 {
+  0% { background-position: 0 0; }
+  100% { background-position: 20% 100%; }
+}
+@keyframes fall-2 {
+  0% { background-position: 0 0; }
+  100% { background-position: 30% 100%; }
+}
+@keyframes fall-3 {
+  0% { background-position: 0 0; }
+  100% { background-position: 40% 100%; }
+}
+
+@layer base {
+  body {
+    @apply bg-brand-900 text-white font-sans antialiased;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+  }
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #0f0c29;
+}
+::-webkit-scrollbar-thumb {
+  background: #302b63;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #24243e;
+}
+
+/* Noise overlay */
+.noise-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  pointer-events: none;
+  z-index: 50;
+  opacity: 0.05;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+}
