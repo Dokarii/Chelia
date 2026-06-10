@@ -25,7 +25,7 @@ export default function FinalQuestion() {
   };
 
   return (
-    <div className="w-full max-w-3xl mx-auto pt-12 pb-32 px-4 flex flex-col items-center justify-center relative z-20 overflow-hidden">
+    <div className="w-full max-w-3xl mx-auto pt-28 pb-32 px-4 flex flex-col items-center justify-center relative z-10">
       <motion.div
         initial={{ opacity: 0, y: 50 }}
         whileInView={{ opacity: 1, y: 0 }}
@@ -46,7 +46,7 @@ export default function FinalQuestion() {
               className="bg-[#4CC9F0] text-black border-4 border-black px-10 py-4 text-2xl md:text-3xl font-pixel rounded-xl shadow-[6px_6px_0_0_rgba(0,0,0,1)] z-30 touch-none"
               style={{ position: 'relative' }}
             >
-              Sí
+              Seh
             </motion.button>
             
             <motion.button
@@ -57,7 +57,7 @@ export default function FinalQuestion() {
               className="bg-[#F02A4A] text-white border-4 border-black px-10 py-4 text-2xl md:text-3xl font-pixel rounded-xl shadow-[6px_6px_0_0_rgba(0,0,0,1)] z-30 touch-none"
               style={{ position: 'relative' }}
             >
-              No
+              Nel
             </motion.button>
           </div>
         ) : (
@@ -67,7 +67,7 @@ export default function FinalQuestion() {
             transition={{ type: "spring", bounce: 0.6 }}
             className="text-2xl md:text-4xl text-[#F02A4A] font-pixel mt-8 p-4 border-4 border-dashed border-[#F02A4A] inline-block bg-red-50 rounded-lg"
           >
-            Perdón, no sé programar xd
+            Perdón, no sé programar formularios xd
           </motion.div>
         )}
       </motion.div>

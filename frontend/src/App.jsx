@@ -87,7 +87,7 @@ function App() {
             <FinalQuestion />
 
             <footer className="text-center py-12 text-gray-400 font-pixel text-sm mt-[10vh] relative z-20">
-              <p>END OF TRANSMISSION</p>
+              <p>FIN DE LA TRANSMISIÓN</p>
             </footer>
           </motion.div>
         )}

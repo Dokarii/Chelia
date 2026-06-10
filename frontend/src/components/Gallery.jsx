@@ -2,10 +2,7 @@ import { motion } from 'framer-motion';
 import Card3D from './Card3D';
 
 const images = [
-  "/Media/IMG_1936.JPEG",
-  "/Media/IMG_1943.JPEG",
-  "/Media/70b2ac0d-b952-445a-991b-692aafccfaf2.jpg",
-  "/Media/1ef7e8a8-ed31-44e6-.JPEG"
+  "/Media/IMG_1936.JPEG"
 ];
 
 export default function Gallery() {
@@ -19,9 +16,6 @@ export default function Gallery() {
         className="text-center mb-16"
       >
         <h2 className="font-pixel text-3xl md:text-5xl text-purple-400 mb-4">MEMORIAS</h2>
-        <p className="text-gray-400 font-sans max-w-2xl mx-auto">
-          Momentos capturados en el tiempo.
-        </p>
       </motion.div>
 
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 perspective-1000">

@@ -42,7 +42,7 @@ export default function MusicPlayer() {
                 <Music className="w-5 h-5 text-purple-300" />
               </div>
               <p className="text-purple-100 font-medium">
-                Puedes poner la música para que pruebes tus nuevos audífonos ✨
+                Puedes poner la música para que pruebes tus nuevos audífonos. Está en la esquina inferior derecha 
               </p>
             </div>
           </motion.div>

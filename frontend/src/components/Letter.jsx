@@ -32,7 +32,7 @@ export default function Letter() {
   const stickers = ['🍓', '✨', '💖', '🪶', '💎', '🌸'];
 
   return (
-    <div className="w-full max-w-7xl mx-auto flex flex-col relative z-10 pt-32 pb-0 space-y-[40vh] px-4 overflow-hidden">
+    <div className="w-full max-w-7xl mx-auto flex flex-col relative z-20 pt-32 pb-0 space-y-[40vh] px-4">
       {paragraphs.map((p, index) => {
         const alignClass = alignments[index % alignments.length];
         const isLeft = alignClass.includes("self-start");

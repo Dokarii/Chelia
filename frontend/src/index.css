@@ -61,16 +61,16 @@
 }
 
 @keyframes fall-1 {
-  0% { background-position: 0 0; }
-  100% { background-position: 20% 100%; }
+  0%   { background-position: 0 0; }
+  100% { background-position: 0 200px; }
 }
 @keyframes fall-2 {
-  0% { background-position: 0 0; }
-  100% { background-position: 30% 100%; }
+  0%   { background-position: 0 0; }
+  100% { background-position: 0 150px; }
 }
 @keyframes fall-3 {
-  0% { background-position: 0 0; }
-  100% { background-position: 40% 100%; }
+  0%   { background-position: 0 0; }
+  100% { background-position: 0 80px; }
 }
 
 @layer base {
